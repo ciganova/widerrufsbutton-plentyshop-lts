@@ -1,0 +1,19 @@
+{
+    "isPlentyMarketplace": true,
+    "categories": [
+        "Rechtssicherheit",
+        "Retouren & Widerruf",
+        "Verbraucherschutz",
+        "DSGVO"
+    ],
+    "price": 0,
+    "isExternal": false,
+    "marketplaceName": {
+        "de": "Widerrufsbelehrung (Embed) für plentyShop LTS",
+        "en": "Withdrawal Policy Embed for plentyShop LTS"
+    },
+    "shortDescription": {
+        "de": "DSGVO-konforme Widerrufsbelehrung + Muster-Widerrufsformular per Embed-Script — einbaufertig in 2 Minuten. Kein Abmahnrisiko, keine eigenen Texte hosten, immer aktuell. Optional erweiterbar zum interaktiven Widerrufsbutton mit Formular.",
+        "en": "GDPR-compliant withdrawal policy + model withdrawal form via embed script — ready in 2 minutes. No legal risk, no self-hosted texts, always up-to-date. Optional upgrade to interactive withdrawal button with form."
+    }
+}

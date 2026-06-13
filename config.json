@@ -1,0 +1,24 @@
+{
+    "tenant_id": {
+        "type": "text",
+        "default": "",
+        "label": "Tenant-ID (von widerruf.paketwo.de)",
+        "required": true
+    },
+    "embed_url": {
+        "type": "text",
+        "default": "https://widerruf.paketwo.de",
+        "label": "Embed-Server URL",
+        "required": false
+    },
+    "embed_position": {
+        "type": "select",
+        "default": "footer",
+        "label": "Position der Widerrufsbelehrung",
+        "options": [
+            {"value": "footer", "label": "Footer (inline)"},
+            {"value": "fixed_bottom_right", "label": "Sticky Button (unten rechts)"}
+        ],
+        "required": false
+    }
+}

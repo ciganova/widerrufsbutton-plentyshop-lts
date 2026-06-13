@@ -1,0 +1,39 @@
+{# EmbedScript.twig — plentyShop LTS
+   Injiziert die DSGVO-konforme Widerrufsbelehrung via SaaS-Embed.
+   
+   Konfiguration:
+   - tenant_id: Deine Tenant-ID von widerruf.paketwo.de
+   - embed_position: 'footer' (Standard) oder 'fixed_bottom_right'
+   
+   Das Script rendert automatisch:
+   - Widerrufsbelehrung (§ 355 BGB)
+   - Widerrufsrecht (14 Tage)
+   - Folgen des Widerrufs
+   - Ausschlussgründe
+   - Muster-Widerrufsformular mit Shop-Daten
+#}
+
+{% set tenantId = config('Widerrufsbutton.tenant_id') | default('') %}
+{% set embedUrl = config('Widerrufsbutton.embed_url') | default('https://widerruf.paketwo.de') %}
+{% set position = config('Widerrufsbutton.embed_position') | default('footer') %}
+
+{% if tenantId is not empty %}
+    {# ── Embed-Script von der SaaS-Plattform laden ── #}
+    <script src="{{ embedUrl }}/e/{{ tenantId }}.js" defer></script>
+    
+    {# ── Container-DIV für die Widerrufsbelehrung ── #}
+    {% if position == 'fixed_bottom_right' %}
+    <div id="widerruf-root" style="position:fixed;right:16px;bottom:16px;z-index:9999;max-width:400px;max-height:80vh;overflow-y:auto;"></div>
+    {% else %}
+    <div id="widerruf-root"></div>
+    {% endif %}
+    
+    {# ── Fallback (falls JS deaktiviert): Direktlink zur SaaS ── #}
+    <noscript>
+        <p style="text-align:center;padding:1rem;">
+            <a href="{{ embedUrl }}/e/{{ tenantId }}/config.json" rel="nofollow" target="_blank">
+                Widerrufsbelehrung & Muster-Widerrufsformular
+            </a>
+        </p>
+    </noscript>
+{% endif %}
