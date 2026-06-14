@@ -9,7 +9,12 @@ class WiderrufWidget extends BaseWidget
 
     protected function getTemplateData($widgetSettings, $isPreview)
     {
-        $tenantId = $widgetSettings["tenant_id"]["mobile"] ?? "";
+        $tid = $widgetSettings["tenant_id"] ?? "";
+        // tenant_id might be stored as string directly or as ["mobile" => "..."] array
+        if (is_array($tid)) {
+            $tid = $tid["mobile"] ?? "";
+        }
+        $tenantId = is_string($tid) ? $tid : "";
 
         return [
             "tenant_id" => $tenantId,
