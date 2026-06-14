@@ -1,24 +1,41 @@
 {
-    "tenant_id": {
-        "type": "text",
-        "default": "",
-        "label": "Tenant-ID (von widerruf.paketwo.de)",
-        "required": true
-    },
-    "embed_url": {
-        "type": "text",
-        "default": "https://widerruf.paketwo.de",
-        "label": "Embed-Server URL",
-        "required": false
-    },
-    "embed_position": {
-        "type": "select",
-        "default": "footer",
-        "label": "Position der Widerrufsbelehrung",
-        "options": [
-            {"value": "footer", "label": "Footer (inline)"},
-            {"value": "fixed_bottom_right", "label": "Sticky Button (unten rechts)"}
-        ],
-        "required": false
+    "formatVersion": 1,
+    "menu": {
+        "global": {
+            "label": "Einstellungen",
+            "formFields": {
+                "tenant_id": {
+                    "type": "inputText",
+                    "required": true,
+                    "label": "Tenant-ID",
+                    "options": {
+                        "tooltip": "Deine Tenant-ID von widerruf.paketwo.de (im Dashboard unter 'Embed-Code')",
+                        "defaultValue": ""
+                    }
+                },
+                "embed_url": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Embed-Server URL",
+                    "options": {
+                        "tooltip": "URL der SaaS-Plattform",
+                        "defaultValue": "https://widerruf.paketwo.de"
+                    }
+                },
+                "embed_position": {
+                    "type": "selectBox",
+                    "required": false,
+                    "label": "Position",
+                    "options": {
+                        "tooltip": "Wo die Widerrufsbelehrung erscheinen soll",
+                        "defaultValue": "footer",
+                        "selectBoxValues": [
+                            {"value": "footer", "caption": "Footer (inline)"},
+                            {"value": "fixed_bottom_right", "caption": "Sticky Button (unten rechts)"}
+                        ]
+                    }
+                }
+            }
+        }
     }
 }
