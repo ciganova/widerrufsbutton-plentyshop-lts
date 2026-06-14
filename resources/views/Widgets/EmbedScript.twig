@@ -8,7 +8,9 @@
 {% set tid = tenant_id | default('') %}
 
 {% if tid is not empty %}
+    {% if not is_preview %}
     <script src="https://widerruf.paketwo.de/e/{{ tid }}.js" defer></script>
+    {% endif %}
     <div id="widerruf-root" style="min-height:60px;display:flex;align-items:center;justify-content:center">
         <a href="https://widerruf.paketwo.de/e/{{ tid }}/config.json" 
            target="_blank" rel="nofollow"
