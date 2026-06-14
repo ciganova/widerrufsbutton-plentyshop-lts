@@ -1,30 +1,19 @@
 <?php
 namespace Widerrufsbutton\Widgets;
 
-use Plenty\Modules\ShopBuilder\Contracts\Widget;
-use Plenty\Modules\ShopBuilder\Models\WidgetSettings;
+use Ceres\Widgets\Helper\BaseWidget;
 
-/**
- * WiderrufWidget — ShopBuilder-Widget
- *
- * Rendert die DSGVO-konforme Widerrufsbelehrung per Embed-Script
- * von widerruf.paketwo.de. Konfigurierbar per Tenant-ID.
- */
-class WiderrufWidget extends Widget
+class WiderrufWidget extends BaseWidget
 {
-    /**
-     * Render the widget output.
-     */
-    public function getPreview(): string
-    {
-        return $this->render('EmbedScript');
-    }
+    protected $template = "Widerrufsbutton::Widgets.EmbedScript";
 
-    public function getData(): array
+    protected function getTemplateData($widgetSettings, $isPreview)
     {
+        $tenantId = $widgetSettings["tenant_id"]["mobile"] ?? "";
+
         return [
-            'tenant_id' => $this->widgetSettings->getSetting('tenant_id', ''),
-            'embed_url' => 'https://widerruf.paketwo.de',
+            "tenant_id" => $tenantId,
+            "embed_url" => "https://widerruf.paketwo.de",
         ];
     }
 }
