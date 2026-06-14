@@ -14,6 +14,9 @@ use IO\Helper\ResourceContainer;
  *
  * Pattern: IO.Resources.Import → addScriptTemplate()
  * (siehe Cookbook: Adding Scripts in plentyShop LTS)
+ *
+ * Phase 2 (später): register() enthält den RouteServiceProvider
+ * für das interaktive Widerrufsformular mit Order-Lookup.
  */
 class WiderrufsbuttonServiceProvider extends ServiceProvider
 {
@@ -24,8 +27,8 @@ class WiderrufsbuttonServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Route-ServiceProvider für das interaktive Widerrufsformular
-        $this->getApplication()->register(WiderrufsbuttonRouteServiceProvider::class);
+        // Phase 2: Interaktives Formular (Controller + Routes)
+        // $this->getApplication()->register(WiderrufsbuttonRouteServiceProvider::class);
     }
 
     /**
@@ -36,12 +39,10 @@ class WiderrufsbuttonServiceProvider extends ServiceProvider
         // ── Embed-Script (Widerrufsbelehrung via SaaS) ────────────────
         $dispatcher->listen('IO.Resources.Import', function (ResourceContainer $container)
         {
-            // Das Embed-Script rendert die vollständige Widerrufsbelehrung
-            // + Muster-Widerrufsformular mit den konfigurierten Shop-Daten
             $container->addScriptTemplate('Widerrufsbutton::content.EmbedScript');
         }, self::PRIORITY);
 
-        // ── Optional: Inline-Style für den Embed-Container ────────────
+        // ── Inline-Style für den Embed-Container ────────────
         $dispatcher->listen('IO.Resources.Import', function (ResourceContainer $container)
         {
             $container->addStyleTemplate('Widerrufsbutton::content.EmbedStyle');
