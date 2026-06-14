@@ -9,7 +9,13 @@
 
 {% if tid is not empty %}
     <script src="https://widerruf.paketwo.de/e/{{ tid }}.js" defer></script>
-    <div id="widerruf-root"></div>
+    <div id="widerruf-root" style="min-height:60px;display:flex;align-items:center;justify-content:center">
+        <a href="https://widerruf.paketwo.de/e/{{ tid }}/config.json" 
+           target="_blank" rel="nofollow"
+           style="display:inline-block;padding:12px 28px;background:#cd0001;color:#fff;border-radius:6px;text-decoration:none;font-family:sans-serif;font-size:15px;font-weight:600">
+            📄 Widerrufsformular öffnen
+        </a>
+    </div>
     <noscript>
         <p style="text-align:center;padding:1rem;">
             <a href="https://widerruf.paketwo.de/e/{{ tid }}/config.json"
