@@ -1,11 +1,9 @@
 {
     "name": "Widerrufsbutton",
     "namespace": "Widerrufsbutton",
-    "type": "widget",
-    "version": "2.1.1",
-    "require": {
-        "Ceres": "~5.0.0"
-    },
+    "type": "widgets",
+    "version": "2.1.2",
+    "require": ["Ceres", "IO"],
     "platform": {
         "php": ">=8.0 <8.4"
     },

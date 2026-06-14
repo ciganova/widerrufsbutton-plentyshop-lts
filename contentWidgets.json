@@ -3,8 +3,7 @@
         "identifier": "Widerrufsbutton::WiderrufWidget",
         "label": "Widget.widerrufLabel",
         "previewImageURL": "/images/widerruf-widget.svg",
-        "type": "static",
-        "categories": ["footer", "text"],
+        "type": "default",
         "position": 800,
         "widgetClass": "Widerrufsbutton\\Widgets\\WiderrufWidget",
         "settings": {
