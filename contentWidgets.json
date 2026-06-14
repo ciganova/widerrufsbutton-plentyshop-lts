@@ -1,0 +1,22 @@
+[
+    {
+        "identifier": "Widerrufsbutton::WiderrufWidget",
+        "label": "Widget.widerrufLabel",
+        "previewImageURL": "/images/widerruf-widget.svg",
+        "type": "static",
+        "categories": ["footer", "text"],
+        "position": 800,
+        "widgetClass": "Widerrufsbutton\\Widgets\\WiderrufWidget",
+        "settings": {
+            "tenant_id": {
+                "type": "text",
+                "required": true,
+                "defaultValue": "",
+                "options": {
+                    "name": "Widget.tenantIdLabel",
+                    "tooltip": "Widget.tenantIdTooltip"
+                }
+            }
+        }
+    }
+]

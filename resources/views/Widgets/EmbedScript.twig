@@ -1,0 +1,21 @@
+{# EmbedScript.twig — ShopBuilder Widget
+   Rendert die DSGVO-konforme Widerrufsbelehrung via SaaS-Embed.
+   
+   Konfiguration (im ShopBuilder):
+   - tenant_id: Deine Tenant-ID von widerruf.paketwo.de
+#}
+
+{% set tid = tenant_id | default('') %}
+
+{% if tid is not empty %}
+    <script src="https://widerruf.paketwo.de/e/{{ tid }}.js" defer></script>
+    <div id="widerruf-root"></div>
+    <noscript>
+        <p style="text-align:center;padding:1rem;">
+            <a href="https://widerruf.paketwo.de/e/{{ tid }}/config.json"
+               rel="nofollow" target="_blank">
+                Widerrufsbelehrung & Muster-Widerrufsformular
+            </a>
+        </p>
+    </noscript>
+{% endif %}

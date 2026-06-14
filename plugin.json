@@ -1,32 +1,20 @@
 {
     "name": "Widerrufsbutton",
     "namespace": "Widerrufsbutton",
-    "type": "template",
-    "version": "2.0.3",
-    "require": {
-        "IO": "~5.0.0"
-    },
+    "type": "widget",
+    "version": "2.1.0",
     "platform": {
         "php": ">=8.0 <8.4"
     },
     "isClosedSource": false,
-    "description": "DSGVO-konforme Widerrufsbelehrung als Embed für plentyShop LTS — einbaufertig in 2 Minuten. Kein Abmahnrisiko, immer aktuell. Optional: interaktiver Widerrufsbutton mit Formular und E-Mail-Benachrichtigung.",
+    "description": "DSGVO-konforme Widerrufsbelehrung als ShopBuilder-Widget. Per Embed von widerruf.paketwo.de — immer aktuell, kein Abmahnrisiko.",
     "author": "ROMIC Consulting",
     "email": "vc.romic@gmail.com",
     "authorIcon": "icon_author_xs.png",
     "pluginIcon": "icon_plugin_xs.png",
     "serviceProvider": "Widerrufsbutton\\Providers\\WiderrufsbuttonServiceProvider",
     "keywords": [
-        "widerruf",
-        "widerrufsbutton",
-        "widerrufsbelehrung",
-        "widerrufsrecht",
-        "DSGVO",
-        "356a",
-        "BGB",
-        "verbraucherschutz",
-        "rechtssicherheit",
-        "embed",
-        "plentyShop LTS"
+        "widerruf", "widerrufsbutton", "widerrufsbelehrung",
+        "DSGVO", "BGB", "shopbuilder", "widget", "embed"
     ]
 }
