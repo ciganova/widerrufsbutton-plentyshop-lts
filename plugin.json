@@ -2,7 +2,7 @@
     "name": "Widerrufsbutton",
     "namespace": "Widerrufsbutton",
     "type": "template",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "require": {
         "IO": "~5.0.0"
     },
