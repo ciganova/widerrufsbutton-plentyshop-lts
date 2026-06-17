@@ -3,6 +3,7 @@
    
    Konfiguration (im ShopBuilder):
    - tenant_id: Deine Tenant-ID von widerruf.paketwo.de
+   ALLE Bezeichner mit w98317lkj_-Prefix — garantiert keine Kollision mit Shop-CSS/JS.
 #}
 
 {% set tid = tenant_id | default('') %}
@@ -11,7 +12,7 @@
     {% if not is_preview %}
     <script src="https://widerruf.paketwo.de/e/{{ tid }}.js" defer></script>
     {% endif %}
-    <div id="widerruf-root-{{ tid }}" class="widerruf-root" style="min-height:60px">
+    <div id="w98317lkj_root-{{ tid }}" class="w98317lkj_root" style="min-height:60px">
         <a href="https://widerruf.paketwo.de/e/{{ tid }}/config.json" 
            target="_blank" rel="nofollow"
            style="display:inline-block;padding:12px 28px;background:#cd0001;color:#fff;border-radius:6px;text-decoration:none;font-family:sans-serif;font-size:15px;font-weight:600">
